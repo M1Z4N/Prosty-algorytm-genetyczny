@@ -28,11 +28,11 @@
                     <label for="c">c = </label>
                     <input type="number" name="c" id="c" placeholder="2" required><br>
                     <label for="ile_wyn">Liczba uruchomień programu: </label>
-                    <input type="number" name="ile_wyn" id="ile_wyn" placeholder="40" required><br>
+                    <input type="number" name="ile_wyn" id="ile_wyn" min="0" placeholder="40" required><br>
                     <label for="lb_pop">Liczba populacji: </label>
-                    <input type="number" name="lb_pop" id="lb_pop" onchange="ratio()" required><br>
+                    <input type="number" name="lb_pop" id="lb_pop" onchange="ratio()" min="0" required><br>
                     <label for="ile_os">Liczba osobników w populacji: </label>
-                    <input type="number" name="ile_os" id="ile_os" onchange="ratio()" required><br>
+                    <input type="number" name="ile_os" id="ile_os" onchange="ratio()" min="0" required><br>
                     <label for="pr_krzyz">Prawdopodobieństwo krzyżowania: </label>
                     <input type="number" name="pr_krzyz" id="pr_krzyz" min="0" max="100" step="any"
                         placeholder="Najlepiej 50 - 90%" required><br>
