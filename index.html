@@ -12,11 +12,32 @@
 <body>
     <header>
         <h1>Projekt nr 1: Prosty algorytm genetyczny (Simple Genetic Algorithm – SGA)</h1>
-        <h2>maksymalizujący funkcję kwadratową <span>f(x) = ax<sup>2</sup> + bx + c</span> w przedziale x &#8714 <0;255></h2>
+        <h2>maksymalizujący funkcję kwadratową <span>f(x) = ax<sup>2</sup> + bx + c</span> w przedziale x &#8714 <0;255>
+        </h2>
     </header>
 
     <main>
         <div id="parameters">
+            <fieldset style="justify-content: space-between;">
+                <legend>Uwagi!</legend>
+                <span id="disclaimer">
+                    Liczba wszystkich osobników <br>
+                    nie powinna przekroczyć <span style="text-decoration: underline; color: red;">150</span>.<br><br>
+                    lb_pop * ile_os ≤ 150
+                </span>
+
+                <span id="currentRatio">
+                    Aktualna ilość osobników:
+                    <span id="ratio"></span>
+                </span>
+
+                <span id="legend">
+                    lb_pop - Liczba populacji <br>
+                    ile_os - Liczba osobników
+                </span>
+
+            </fieldset>
+
             <form
                 onsubmit="start(this['a'].value, this['b'].value, this['c'].value, this['ile_wyn'].value, this['lb_pop'].value, this['ile_os'].value, this['pr_krzyz'].value, this['pr_mut'].value)">
                 <fieldset>
@@ -43,38 +64,22 @@
                 </fieldset>
             </form>
 
-            <fieldset style="justify-content: space-between;">
-                <legend>Uwagi!</legend>
-                <span id="disclaimer">
-                    Liczba wszystkich osobników <br>
-                    nie powinna przekroczyć <span style="text-decoration: underline; color: red;">150</span>.<br><br>
-                    lb_pop * ile_os ≤ 150
-                </span>
+            <div id="result">
+                <fieldset>
+                    <legend>Wyniki:</legend>
+                    <form onsubmit="download(this['fileName'].value, this['text'].value)">
+                        <input type="submit" value="Pobierz plik" style="float: right;" id="pobierz"><br>
+                        <button type="reset" style="float: right; position: relative; top: -5px;">Wyczyść</button><br>
+                        <label for="fileName">Nazwa pliku:</label>
+                        <input type="text" name="fileName" id="fileName" value="wyniki.txt"><br>
+                        <label for="text">Wyniki:</label>
+                        <textarea name="text" id="text">f(best) best</textarea>
+                    </form>
+                </fieldset>
+            </div>
 
-                <span id="currentRatio">
-                    Aktualna ilość osobników:
-                    <span id="ratio"></span>
-                </span>
-
-                <span id="legend">
-                    lb_pop - Liczba populacji <br>
-                    ile_os - Liczba osobników
-                </span>
-            </fieldset>
         </div>
 
-        <div id="result">
-            <fieldset>
-                <legend>Wyniki:</legend>
-                <form onsubmit="download(this['fileName'].value, this['text'].value)">
-                    <input type="submit" value="Pobierz plik" style="float: right;" id="pobierz"><br><br>
-                    <label for="fileName">Nazwa pliku:</label><br>
-                    <input type="text" name="fileName" id="fileName" value="wyniki.txt"><br><br>
-                    <label for="text">Wyniki:</label><button type="reset" style="float: right; position: relative; top: -5px;">Wyczyść</button><br>
-                    <textarea name="text" id="text">f(best) best</textarea>
-                </form>
-            </fieldset>
-        </div>
 
 
     </main>
