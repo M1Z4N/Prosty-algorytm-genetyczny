@@ -13,4 +13,4 @@ Pseudo kod algorytmu:
 
 Disclaimer:
 
-Dla funckji o paramaterach a=1, b=0, c=0 nie działa kodowanie i zapisuje w pliku chińskie znaczki.
+Dla funckji o paramaterach a=1, b=0, c=0 po pobraniu wyników zapisuje w pliku chińskie znaczki (najprawdopodobniej problem z kodowaniem).
